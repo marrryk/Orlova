@@ -1,0 +1,160 @@
+
+* {
+  box-sizing: border-box;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+body {
+  background-color: #000;
+}
+ .aaa {
+  
+  position: relative;
+  height: 100%;
+ }
+.lightbox, .grid {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.lightbox {
+  z-index: 0;
+  min-height: 100%;
+  overflow: auto;
+  transform: scale(0);
+  transition: transform .5s ease-out;
+}
+.lightbox img {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 96%;
+  max-height: 96%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+input[type="checkbox"]:checked + .lightbox {
+  z-index: 1;
+  transform: scale(1);
+}
+
+input[type="checkbox"]:checked ~ .grid {
+  opacity: .125;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  z-index: 0;
+  height: 100%;
+  padding: 16px;
+  overflow: auto;
+  background-color: #222;
+  text-align: center;
+  transition: opacity .75s;
+       }
+
+ .grid .grid-item {
+  /*display: inline-block;*/
+  width: 25%;
+  padding: 16px;
+  opacity: .75;
+  transition: opacity .5s;
+}
+.grid .grid-item:hover {
+  opacity: 1;
+}
+@media screen and (max-width: 1024px) {
+  .grid .grid-item {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .grid .grid-item {
+    width: 100%;
+  }
+}
+.grid img {
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+
+footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: #414a4f;
+  padding: 5px 0 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+
+}
+
+ul, nav{
+  list-style: none;
+}
+
+footer ul{
+color: white;
+  display: flex;
+  margin: 0;
+  font-size: 32px;
+}
+
+footer ul li{
+  margin: 0 8px;  
+}
+
+footer ul li:first-child{
+  margin-left: 0; 
+}
+
+footer ul li:last-child{
+  margin-right: 0;  
+}
+
+footer p{
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  
+}
+
+footer p a{
+  color: #fff;
+}
+
+@media (max-width: 700px){
+
+  footer{
+    padding: 10px 15px;
+  }
+h2 {
+  text-align: center;
+}
+}
+
+body {
+                display: flex;
+                flex-direction: column;
+            }
+            .aaa {
+                flex-grow: 1;
+            }
